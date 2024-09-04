@@ -5,6 +5,7 @@ import swaggerUI from "swagger-ui-express";
 import cors from "cors";
 // import  Categories  from "./Categories";
 import Users from "./users"
+import todoRouter from "./todo"
 
 export default (app: Application) => {
   const options = {
@@ -38,5 +39,5 @@ export default (app: Application) => {
     res.json({ message: "API Running ! " });
   });
 
-  app.use("/api/v1/", [Users]);
+  app.use("/api/v1/", [Users,todoRouter]);
 };
